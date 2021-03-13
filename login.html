@@ -1,166 +1,254 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-<title>ERWIN WIFI</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="expires" content="-1" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
-<link rel="stylesheet" href="style.css">
-		
-<style type="text/css"> 
-.blink { -webkit-animation: blink .99s linear infinite; 
--moz-animation: blink .99s linear infinite; 
--ms-animation: blink .99s linear infinite; 
--o-animation: blink .99s linear infinite; 
-animation: blink .99s linear infinite; } @-webkit-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-moz-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-ms-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-o-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } 
 
-</style>
+<head>
+  <title>HOTSPOT WIFI</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="lib/slick.css" />
+  <link rel="stylesheet" type="text/css" href="lib/slick-theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
 </head>
 
 <body>
-<center>
-$(if chap-id)
-	<form name="sendin" action="$(link-login-only)" method="post">
-		<input type="hidden" name="username" />
-		<input type="hidden" name="password" />
-		<input type="hidden" name="dst" value="$(link-orig)" />
-		<input type="hidden" name="popup" value="true" />
-	</form>
-	
-	<script type="text/javascript" src="/md5.js"></script>
-	<script type="text/javascript">
-	<!--
-	    function doLogin() {
-		document.sendin.username.value = document.login.username.value;
-		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
-		document.sendin.submit();
-		return false;
-	    }
+  <center>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+      <input type="hidden" name="username" />
+      <input type="hidden" name="password" />
+      <input type="hidden" name="dst" value="$(link-orig)" />
+      <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script type="text/javascript" src="/md5.js"></script>
+    <script type="text/javascript">
+	< !--
+        function doLogin() {
+          document.sendin.username.value = document.login.username.value;
+          document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+          document.sendin.submit();
+          return false;
+        }
 	//-->
-	</script>
-$(endif)
+    </script>
+    $(endif)
 
-<div class="main">
-		  <center><img src="img/logo.png" alt="kemangi 41" style="border-radius: 2px; width:250px; height:auto;"/><br><br>
-        <font face="Cooper Black" >Fast & Reliable Internet Access</font></center>
-		  <h3></h3>
-<div class="box">
+    <div class="main">
+      <!-- <div class="box">
+      </div> -->
+
+      <!-- <div class="box" id="infologin">
+      </div> -->
+      <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id)
+        onSubmit="return doLogin()" $(endif)>
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+        <input class="username" name="username" type="text" placeholder="Username" value="$(username)" />
+        <input class="password" name="password" placeholder="Password" type="password" />
+        <input class="btn" type="submit" value="LOGIN" />
+      </form>
+      $(if error)<div class="notice">$(error)</div>$(endif)
+      $(if trial == 'yes')
+      <div class="box">Free Net for Trial <a style="text-decoration: underline;"
+          href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"> CLICK HERE</a>
+      </div>
+      $(endif)
+      <!-- <p style="font-size:14px;text-align:center;margin-top:-5px;margin-bottom:-4px;" class="blink">
+      <p style="text-align:center;margin-top:-3px;margin-bottom:5px"> -->
+
+      <table>
+        <tr>
+          <th colspan="3">Tarifs</th>
+        </tr>
+        <tr>
+          <th>Temps</th>
+          <th>Validité</th>
+          <th>Prix</th>
+        </tr>
+        <tr>
+          <td> P5.00</td>
+          <td> 1 HOUR</td>
+          <td> 10 </td>
+        </tr>
+        <tr>
+          <td> P5.00</td>
+          <td> 1 HOUR</td>
+          <td> 10 </td>
+        </tr>
+        <tr>
+          <td> P5.00</td>
+          <td> 1 HOUR</td>
+          <td> 10 </td>
+        </tr>
+        <tr>
+          <td> P5.00</td>
+          <td> 1 HOUR</td>
+          <td> 10 </td>
+        </tr>
+        <tr>
+          <td> P5.00</td>
+          <td> 1 HOUR</td>
+          <td> 10 </td>
+        </tr>
+      </table>
+      <div>
+          <h3>Publicité</h3>    
+      </div>
+      <div class="pubMessage">
+        <p>
+          Publiez vos annonces ici à 100fcfa/Mois
+        </p>
+      </div>
+      <div id="slider" class="images glide">
+        <div>
+          <img src="images/1.jpg" width="300" height="200" alt="">
         </div>
+        <div>
+          <img src="images/2.jpg" width="300" height="200" alt="">
+        </div>
+        <div>
+          <img src="images/3.jpg" width="300" height="200" alt="">
+        </div>
+        <div>
+          <img src="images/4.jpg" width="300" height="200" alt="">
+        </div>
+        <div>
+          <img src="images/5.jpg" width="300" height="200" alt="">
+        </div>
+        <div>
+          <img src="images/6.jpg" width="300" height="200" alt="">
+        </div>
+      </div>
 
-<div class="box" id="infologin" >
-</div>
-	<form autocomplete="off" name="login" action="$(link-login-only)" method="post"
-		$(if chap-id) onSubmit="return doLogin()" $(endif)>
-			<input type="hidden" name="dst" value="$(link-orig)" />
-			<input type="hidden" name="popup" value="true" />	
-			<input class="username" name="username"type="text"placeholder="Username" value="$(username)"/>
-			<input class="password" name="password"placeholder="Password" type="text" />
-								
-			<input class="btn btn-in btn-bl" type="submit" value="LOGIN" />
-
-	</form>
-$(if error)<div class="notice">$(error)</div>$(endif)
-  $(if trial == 'yes')
-    <div class="box">Free Net for Trial  <a style="text-decoration: underline; color:#fff;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"> CLICK HERE</a></div>
-  $(endif)
-<p style="font-size:14px;text-align:center;margin-top:-5px;margin-bottom:-4px;color:#FFF" class="blink">
-	<p style="text-align:center;margin-top:-3px;margin-bottom:5px">
-
-<table class="table" >
-  <caption style="font-size: 14px; font-weight: bold;">Select your Wi-Fi Rates</caption>
-    <tr>
-         <th>PRICE</th>
-        <th>TIME LIMIT</th>    
-    </tr>
-    <tr>
-        <td> P5.00</td>
-        <td> 1 HOUR</td>
-    </tr>
-    <tr>
-       <td> P10.00</td>
-        <td> 3 HOURS</td>
-    </tr>
-	    <tr>
-       <td> P30.000</td>
-        <td> 1 DAY</td>
-    </tr>
-	    <tr>
-       <td> P120.00</td>
-        <td> 7 DAY</td>
-    </tr>
-    <tr>
-       <td> P350.00</td>
-        <td> 1 MONTH</td>
-    </tr>
-	<table class="table" >
-  <caption style="font-size: 14px; font-weight: bold;">BUY NOW</caption>
-    <tr>
-         <th>Follow us on Facebook: Boy Tech Vlogs</th>
-        </table><br>
-<p style="font-size:14px;text-align:center;margin-top:-5px;margin-bottom:-4px;color:#FFFF00" class="blink">
-	<p style="text-align:center;margin-top:-3px;margin-bottom:5px"></p>
-</div>
-<p style=" text-align:center;margin-top:10px;margin-bottom:5px">
-<div class="box" style="color:#fff";>
- <i>Copyright &copy; 2021 </i><br />
-Powered by <a style="color:#fff; text-decoration:underline;" href="https://www.facebook.com/BoyTechVlogs">Boy Tech</a>
-
-                      
-</div>
-</center>
-<script type="text/javascript">
-<!--
-
-document.getElementById('title').innerHTML = window.location.hostname + " > login";
-
-document.login.username.focus();
-
-var infologin = document.getElementById('infologin');
-infologin.innerHTML  = "Masukkan Kode Voucher kemudian klik login.";
-
-// login page 2 mode by Laksamadi Guko
-var username = document.login.username;
-var password = document.login.password;
-
-username.placeholder = "KODE VOUCHER";
+      <div class="bottomMessage">
+        <p>
+Accès internet 24 heures sur 24 à des prix abordables,
+WIFI ZONE | Solutions de connexions Internet HOTSPOT
+sur place et vers les maisons
+        </p>
+      </div>
 
 
-function harga(){
-  harga.display = "none";
-}
+      <div class="icons_socials">
+        <i class="fab icon-size fa-facebook-square"></i>
+        <i class="fab icon-size fa-twitter-square"></i>
+        <i class="fab icon-size fa-youtube"></i>
+        <i class="fab icon-size fa-google-plus-square"></i>
+        <i class="fab icon-size fa-instagram"></i>
+      </div>
+  </center>
 
-// set password = username
-function setpass(){
-  var user = username.value		
-  password.value = user;
-}
+  <script type="text/javascript">
+      < !--
 
-username.onkeyup = setpass; 
- 
+      // document.getElementById('title').innerHTML = window.location.hostname + " > login";
+
+      document.login.username.focus();
+
+    var infologin = document.getElementById('infologin');
+    infologin.innerHTML = "Masukkan Kode Voucher kemudian klik login.";
+
+    // login page 2 mode by Laksamadi Guko
+    var username = document.login.username;
+    var password = document.login.password;
+
+    username.placeholder = "KODE VOUCHER";
 
 
-// change to voucher mode
-function voucher(){
-  username.focus();
-  username.onchange = setpass;
-  username.placeholder = "KODE VOUCHER";
-  username.style = "border-radius:3px;"
-  password.type = "hidden";
-  infologin.innerHTML  = "Masukkan Kode Voucher kemudian klik login.";
-}
+    function harga() {
+      harga.display = "none";
+    }
 
-// change to member mode
-function member(){
-  username.focus();
-  username.onchange = "";
-  username.placeholder = "Username";
-  username.style = "border-radius:3px 3px 0px 0px;"
-  password.type= "password";
-  infologin.innerHTML  = "Masukkan Username dan Password kemudian klik login.";
-}
+    // set password = username
+    function setpass() {
+      var user = username.value
+      password.value = user;
+    }
+
+    username.onkeyup = setpass;
+
+
+
+    // change to voucher mode
+    function voucher() {
+      username.focus();
+      username.onchange = setpass;
+      username.placeholder = "KODE VOUCHER";
+      username.style = "border-radius:3px;"
+      password.type = "hidden";
+      infologin.innerHTML = "Masukkan Kode Voucher kemudian klik login.";
+    }
+
+    // change to member mode
+    function member() {
+      username.focus();
+      username.onchange = "";
+      username.placeholder = "Username";
+      username.style = "border-radius:3px 3px 0px 0px;"
+      password.type = "password";
+      infologin.innerHTML = "Masukkan Username dan Password kemudian klik login.";
+    }
+
 //-->
-</script>
+  </script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="lib/slick.min.js"></script>
+  <script type='text/javascript'>
+    $(document).ready(function () {
+      $('.images').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        centerMode: true,
+        pauseOnDotsHover:false,
+        pauseOnHover:false,
+        pauseOnFocus: false,
+        dots: true,
+        infinite: true,
+        centerPadding: '60px',
+        variableWidth: true,
+        mobileFirst:true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: true,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+  </script>
 </body>
+
 </html>
