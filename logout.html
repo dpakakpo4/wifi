@@ -8,7 +8,7 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="-1">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logout.css">
 
 </head>
 
@@ -23,22 +23,22 @@
             }
 //-->
     </script>
-
+    <center>
     <div class="main">
         <div class="box">
             <br><b style="margin-top:20px;">Logout Hotspot!</b> <br><br>
         </div>
         <table class="table2">
             <tr>
-                <td align="right">User Name</td>
+                <td align="right">Nom d'utilisateur</td>
                 <td>$(username)</td>
             </tr>
             <tr>
-                <td align="right">IP Address</td>
+                <td align="right">Addresse IP</td>
                 <td>$(ip)</td>
             </tr>
             <tr>
-                <td align="right">MAC Address</td>
+                <td align="right">Addresse MAC</td>
                 <td>$(mac)</td>
             </tr>
             <tr>
@@ -64,9 +64,10 @@
         </table>
         <br>
         <form action="$(link-login)" name="login" onSubmit="return openLogin()">
-            <input class="btn btn-in btn-bl" type="submit" value="LOGIN KEMBALI">
+            <input class="btn" type="submit" value="LOGIN KEMBALI">
         </form>
     </div>
+    </center>
     <script type="text/javascript">
         document.getElementById('title').innerHTML = window.location.hostname + " > logout";
     </script>

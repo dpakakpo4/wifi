@@ -39,19 +39,16 @@
 	//-->
     </script>
     $(endif)
-
+    <div class="navbar">
+      <div class="nav-item">WIFI NAME</div>
+    </div>
     <div class="main">
-      <!-- <div class="box">
-      </div> -->
-
-      <!-- <div class="box" id="infologin">
-      </div> -->
       <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id)
         onSubmit="return doLogin()" $(endif)>
         <input type="hidden" name="dst" value="$(link-orig)" />
         <input type="hidden" name="popup" value="true" />
-        <input class="username" name="username" type="text" placeholder="Username" value="$(username)" />
-        <input class="password" name="password" placeholder="Password" type="password" />
+        <input class="username" name="username" type="text" placeholder="Nom d'utilisateur" value="$(username)" />
+        <input class="password" name="password" placeholder="Mot de passe" type="password" />
         <input class="btn" type="submit" value="LOGIN" />
       </form>
       $(if error)<div class="notice">$(error)</div>$(endif)
@@ -60,8 +57,6 @@
           href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"> CLICK HERE</a>
       </div>
       $(endif)
-      <!-- <p style="font-size:14px;text-align:center;margin-top:-5px;margin-bottom:-4px;" class="blink">
-      <p style="text-align:center;margin-top:-3px;margin-bottom:5px"> -->
 
       <table>
         <tr>
@@ -99,7 +94,7 @@
         </tr>
       </table>
       <div>
-          <h3>Publicité</h3>    
+        <h3>Publicité</h3>
       </div>
       <div class="pubMessage">
         <p>
@@ -108,13 +103,13 @@
       </div>
       <div id="slider" class="images glide">
         <div>
-          <img src="images/1.jpg" width="300" height="200" alt="">
+          <img src="images/1.jpg" width="280" height="200" alt="">
         </div>
         <div>
-          <img src="images/2.jpg" width="300" height="200" alt="">
+          <img src="images/2.jpg" width="280" height="200" alt="">
         </div>
         <div>
-          <img src="images/3.jpg" width="300" height="200" alt="">
+          <img src="images/3.jpg" width="280" height="200" alt="">
         </div>
         <div>
           <img src="images/4.jpg" width="300" height="200" alt="">
@@ -129,9 +124,9 @@
 
       <div class="bottomMessage">
         <p>
-Accès internet 24 heures sur 24 à des prix abordables,
-WIFI ZONE | Solutions de connexions Internet HOTSPOT
-sur place et vers les maisons
+          Accès internet 24 heures sur 24 à des prix abordables,
+          WIFI ZONE | Solutions de connexions Internet HOTSPOT
+          sur place et vers les maisons
         </p>
       </div>
 
@@ -198,6 +193,7 @@ sur place et vers les maisons
 
 //-->
   </script>
+  <!-- THESE ARE SCRIPTS -->
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="lib/slick.min.js"></script>
@@ -209,14 +205,14 @@ sur place et vers les maisons
         autoplay: true,
         autoplaySpeed: 2000,
         centerMode: true,
-        pauseOnDotsHover:false,
-        pauseOnHover:false,
+        pauseOnDotsHover: false,
+        pauseOnHover: false,
         pauseOnFocus: false,
         dots: true,
         infinite: true,
         centerPadding: '60px',
         variableWidth: true,
-        mobileFirst:true,
+        mobileFirst: true,
         responsive: [
           {
             breakpoint: 1024,
